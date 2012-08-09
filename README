@@ -1,0 +1,7 @@
+Download all the text from the government of Ontario's drivers' handbook!
+
+Usage:
+python download.py
+
+This will download each page of the drivers' handbook to the current directory.
+There will be no images on the page.
