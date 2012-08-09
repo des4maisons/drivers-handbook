@@ -12,7 +12,7 @@ while (url):
             content = unicode(page.read(), "utf-8", errors="replace")
             url = urlparse.urlparse(url)
             filename = basename(url.path)
-            print "filename is: ", filename
+            # print "filename is: ", filename
             with open(filename, 'w') as f:
                 f.write(content.encode("utf-8"))
             soup = BeautifulSoup(content)
@@ -27,7 +27,7 @@ while (url):
 
         
         next_filename = next_page["href"] 
-        print "next_filename is: ", next_filename
+        # print "next_filename is: ", next_filename
         assert(next_filename == basename(next_filename))
         url = "http://" + url.netloc + dirname(url.path) + "/" + next_filename
-        print "next url is: ", url
+        # print "next url is: ", url
