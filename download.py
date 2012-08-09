@@ -5,7 +5,7 @@ from posixpath import basename, dirname
 import urllib2
 
 url = "http://www.mto.gov.on.ca/english/dandv/driver/handbook/index.shtml"
-while (url):
+while url:
     page = urllib2.urlopen(url)
     if page:
         try:
@@ -28,6 +28,6 @@ while (url):
         
         next_filename = next_page["href"] 
         # print "next_filename is: ", next_filename
-        assert(next_filename == basename(next_filename))
+        assert next_filename == basename(next_filename)
         url = "http://" + url.netloc + dirname(url.path) + "/" + next_filename
         # print "next url is: ", url
